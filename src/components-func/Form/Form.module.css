@@ -1,0 +1,59 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 75px;
+    margin-bottom: 25px;
+    width: 350px;
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    border-top-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.45);
+  }
+  
+  .title {
+    color: maroon;
+  }
+  
+  .text {
+    color: maroon;
+  }
+  
+  .field {
+    width: 95%;
+    height: 25px;
+    border-color: teal;
+    color: maroon;
+    padding: 0 5px;
+  }
+  
+  .button {
+    border: none;
+    background-color: maroon;
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    padding: 5px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+    width: 70px;
+  }
+  
+  .infowrap {
+    color: maroon;
+    margin-top: 10px;
+    border: 1px solid teal;
+    padding: 0 15px;
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+  }
+  
+  .infofield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

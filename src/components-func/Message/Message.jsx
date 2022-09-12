@@ -1,4 +1,13 @@
 import { useState } from 'react';
+import style from './Message.module.css';
+
+export const Message = (props) => (
+  <div className={style.card}>
+    <h3 className={style.title}>Message component (child)</h3>
+    <p className={style.text}>Total messages archived:</p>
+    <p className={style.text1}>{props.data}</p>
+  </div>
+);
 
 export const MessageFunc = (props) => {
   const [msg, setMessage] = useState('')
