@@ -1,5 +1,5 @@
-import { MessageFunc } from '../components-func/Message'
-import { Component } from 'react'
+import { MessageFunc } from '../components-func/Message/Message';
+import { Component } from 'react';
 
 export class MessageClass extends Component {
   state = {
@@ -24,3 +24,4 @@ export class MessageClass extends Component {
     );
   }
 }
+

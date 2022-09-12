@@ -1,0 +1,30 @@
+.card {
+    margin-left: 75px;
+    margin-bottom: 20px;
+    width: 350px;
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    border-top-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.45);
+  }
+  
+  .title {
+    color: maroon;
+  }
+  
+  .text {
+    color: maroon;
+  }
+  
+  .text1 {
+    color: maroon;
+    min-height: 24px;
+    border: 1px solid teal;
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    color: #04566b;
+    font-size: 18px;
+    word-wrap: break-word;
+    padding: 0 5px;
+  }
