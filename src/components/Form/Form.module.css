@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 100px;
+  width: 360px;
+  height: 175px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-top-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.45);
+}
+
+.title {
+  color: maroon;
+}
+
+.text {
+  padding-top: 25px;
+  color: black;
+}
+
+.field {
+  width: 95%;
+  height: 27px;
+  color: teal;
+  padding: 0 5px;
+  border: 1px solid teal;
+}
+
+.btn {
+  border: none;
+  background-color: teal;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  width: 70px;
+}
+
+.btn:disabled {
+  background-color: maroon;
+}
+
+.info {
+  margin-top: 10px;
+  border: 1px solid #e2e0e0;;
+}
+
+.infoBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}

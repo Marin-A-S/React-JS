@@ -1,0 +1,25 @@
+.box {
+  width: 380px;
+  height: 280px;
+  margin: 0 0 25px 100px;
+  background-color: #f3f3f3;
+  border-top-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.45);
+}
+
+.message_scroll {
+  height: 85%;
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.title {  
+  color: maroon;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.list {
+  list-style-type: none;
+}
