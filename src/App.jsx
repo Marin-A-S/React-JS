@@ -1,30 +1,36 @@
-import React from 'react';
-import { useState } from 'react';
-import { Message } from './components-func/Message/Message';
-import { Form } from './components-func/Form/Form';
-import { MessageClass } from './components-class/Message';
-import './index.css';
-
+import { useState, useEffect } from 'react';
+import { Form } from './components/Form';
+import { MessageList } from './components/MessageList';
+import { AUTHOR } from 'src/constants';
 
 export const App = () => {
-  const [messageList, setMessageList] = useState([]);
+  const [messages, setMessages] = useState([]);
+
+  const addMessage = (newMessage) => {
+    setMessages((prevMessage) => [...prevMessage, newMessage]);
+    console.log(messages)
+  }
+
+  useEffect(() => {
+    if (messages.length > 0 &&
+      messages[messages.length - 1].author === AUTHOR.user
+    ) {
+      const timeout = setTimeout(() => {
+        addMessage({
+          author: AUTHOR.bot,
+          text: 'Im Bot'
+        });
+      }, 1500)
+
+      return () => clearTimeout(timeout);
+    }
+  }, [messages])
 
   return (
     <div className="App">
-      <MessageClass messageList={['App_props_1 ', 'App_props_2 ', 'App_props_3 ']} />
-      <Form arr={messageList} changeMessageList={setMessageList} />
-      <Message data={messageList.length} />
-      <div>
-        <div>
-          <u>Messages typed:</u>
-        </div>
-        {messageList.map((message, index) => (
-          <div key={index}>
-            {' '}
-            {message.author}: {message.text}
-          </div>
-        ))}
-      </div>
+      <MessageList messages={messages} />
+      <Form addMessage={addMessage} />
     </div>
   );
-}
+};
+
