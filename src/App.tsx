@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { Form } from './components/Form';
 import { MessageList } from './components/MessageList';
 import { AUTHOR } from 'src/constants';
+import { Message, Messages } from "src/types";
 
-export const App = () => {
-  const [messages, setMessages] = useState([]);
 
-  const addMessage = (newMessage) => {
+export const App: FC = () => {
+  const [messages, setMessages] = useState<Messages>([]);
+
+  const addMessage = (newMessage: Message) => {
     setMessages((prevMessage) => [...prevMessage, newMessage]);
     console.log(messages)
   }
@@ -33,4 +35,3 @@ export const App = () => {
     </div>
   );
 };
-
