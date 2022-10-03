@@ -1,0 +1,11 @@
+.ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: circle;
+  margin: 7px 15% 10px;
+  height: 35px;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}
+
