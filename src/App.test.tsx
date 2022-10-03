@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { App } from './App';
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 describe('App', () => {
   it('render main page', () => {
@@ -20,16 +22,17 @@ describe('App', () => {
         <App />
       </MemoryRouter>
     );
-    screen.debug();
     expect(screen.getByText('404 page')).toBeInTheDocument();
   });
 
   it('send user message', async () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     render(
-      <MemoryRouter initialEntries={['/chats/1']}>
-        <App />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/chats/first']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
 
     const input = screen.getByTestId<HTMLInputElement>('input');
@@ -38,14 +41,17 @@ describe('App', () => {
     const button = screen.getByTestId('button');
     await userEvent.click(button);
 
+    expect(screen.getByText(/Hello, world!/)).toBeInTheDocument();
     expect(screen.getAllByTestId('li').length).toBe(2);
   });
 
   it('bot answer', async () => {
     render(
-      <MemoryRouter initialEntries={['/chats/1']}>
-        <App />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/chats/first']}>
+          <App />
+        </MemoryRouter>
+      </Provider>
     );
 
     const input = screen.getByTestId<HTMLInputElement>('input');
