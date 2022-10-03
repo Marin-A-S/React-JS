@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { StoreState } from 'src/store';
 import { toggleProfile } from 'src/store/profile/actions';
-import { ProfileState } from 'src/store/profile/reducer';
+import { selectVisible } from 'src/store/profile/selectors';
 import style from './Profile.module.css';
 
 export const About: FC = ({ visible, toggle }: any) => {
@@ -18,8 +19,8 @@ export const About: FC = ({ visible, toggle }: any) => {
   );
 };
 
-const mapStateToProps = (state: ProfileState) => ({
-  visible: state.visible,
+const mapStateToProps = (state: StoreState) => ({
+  visible: selectVisible(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

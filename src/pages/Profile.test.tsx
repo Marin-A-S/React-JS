@@ -22,7 +22,6 @@ describe('Profile', () => {
     const input = screen.getByTestId<HTMLInputElement>('input');
     const button = screen.getByTestId('button');
     fireEvent.click(button);
-
     expect(input.checked).toBe(false);
   });
 
@@ -37,8 +36,6 @@ describe('Profile', () => {
     expect(input.value).toBe('new value');
     const button = screen.getByTestId('buttonName');
     fireEvent.click(button);
-
     expect(screen.getByTestId('name').innerHTML).toBe('name: new value');
-    screen.debug();
   });
 });

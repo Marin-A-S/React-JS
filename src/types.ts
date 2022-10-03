@@ -10,3 +10,7 @@ export interface Chat {
   name: string;
 }
 
+export enum AUTHOR {
+  USER = 'USER',
+  BOT = 'BOT',
+}
