@@ -1,5 +1,5 @@
 import { Form } from './Form';
-import { render, screen, fireEvent} from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
@@ -26,7 +26,7 @@ describe('Form', () => {
     expect(inputEl.value).toBe('Hello world');
   });
 
-   it('activation of the button when the text is entered', () => {
+  it('activation of the button when the text is entered', () => {
     const value = '23';
     const inputEl = screen.getByTestId<HTMLInputElement>('input');
     const inputBtn = screen.getByRole('button');
