@@ -1,4 +1,4 @@
-import { Message } from 'src/types';
+import { Message } from '../../../src/types';
 import { ADD_CHAT, ADD_MESSAGE, DELETE_CHAT } from './actions';
 
 export type MessagesActions = AddChat | AddMessage | DeleteChat;
@@ -17,4 +17,9 @@ export interface AddMessage {
 export interface DeleteChat {
   type: typeof DELETE_CHAT;
   chatId: string;
+}
+
+export interface AddMessage {
+  chatName: string;
+  message: Message;
 }
