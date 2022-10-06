@@ -7,8 +7,10 @@ import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import { AUTHOR } from 'src/types';
 import { Theme } from '../Theme/Theme';
-import { addMessage } from 'src/store/messages/actions';
+import { addMessagesWithReply } from 'src/store/messages/slice';
 import style from './Form.module.css';
+import { StoreState } from 'src/store';
+import { ThunkDispatch } from 'redux-thunk';
 
 const MyButton = styled(Button)({
   width: 90,
@@ -18,15 +20,15 @@ export const Form: FC = () => {
   const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
   const { chatId } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<StoreState, void, any>>();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (chatId) {
       dispatch(
-        addMessage(chatId, {
-          author: AUTHOR.USER,
-          text,
+        addMessagesWithReply({
+          chatName: chatId,
+          message: { author: AUTHOR.USER, text },
         })
       );
     }
@@ -42,7 +44,7 @@ export const Form: FC = () => {
           type="text"
           value={author}
           onChange={(event) => setAuthor(event.target.value)}
-          placeholder="автор"
+          placeholder="Author"
           disabled
         ></input>
         <TextField

@@ -13,16 +13,17 @@ describe('MessageList', () => {
     },
   ];
 
+  const string = 'string';
+
   it('render component MessageList', () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <MessageList messages={arrMessages} />
+          <MessageList messages={arrMessages} title={string} />
         </MemoryRouter>
       </Provider>
     );
-    screen.debug();
     expect(screen.getByText(/USER : 111/)).toBeInTheDocument();
   });
 
@@ -30,7 +31,7 @@ describe('MessageList', () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <MessageList messages={[]} />
+          <MessageList messages={[]} title={string} />
         </MemoryRouter>
       </Provider>
     );
@@ -51,12 +52,11 @@ describe('MessageList', () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <MessageList messages={messages} />
+          <MessageList messages={messages} title={string} />
         </MemoryRouter>
       </Provider>
     );
     expect(screen.getAllByTestId('li').length).toBe(2);
     expect(screen.getAllByTestId('li')[0].innerHTML).toBe('USER : first');
-    screen.debug();
   });
 });

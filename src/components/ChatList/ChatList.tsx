@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { ListItem, List, ListSubheader, ListItemButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addChat, deleteChat } from 'src/store/messages/actions';
+import { addChat, deleteChat } from 'src/store/messages/slice';
 import { selectChats } from 'src/store/messages/selectors';
 import style from './ChatList.module.css';
 

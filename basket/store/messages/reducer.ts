@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
-import { AUTHOR } from 'src/types';
-import { Messages } from 'src/types';
+import { AUTHOR } from '../../../src/types';
+import { Messages } from '../../../src/types';
 import { ADD_CHAT, ADD_MESSAGE, DELETE_CHAT } from './actions';
 import { MessagesActions } from './types';
 
@@ -35,4 +35,3 @@ export const messagesReducer: Reducer<Messages, MessagesActions> = (
       return state;
   }
 };
-

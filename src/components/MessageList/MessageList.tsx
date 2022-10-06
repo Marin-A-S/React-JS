@@ -4,9 +4,10 @@ import { Message } from 'src/types';
 
 interface MessageListProps {
   messages: Message[];
+  title: string;
 }
 
-export const MessageList: FC<MessageListProps> = ({ messages }) => {
+export const MessageList: FC<MessageListProps> = ({ messages, title }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export const MessageList: FC<MessageListProps> = ({ messages }) => {
 
   return (
     <div className={style.box2}>
-      <h3 className={style.title}>Messages</h3>
+      <h3 className={style.title}>{title} </h3>
       <div className={style.message_scroll}>
         <ul className={style.list}>
           {messages.map((message, idx) => (

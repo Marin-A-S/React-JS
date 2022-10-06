@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { StoreState } from 'src/store';
-import { toggleProfile } from 'src/store/profile/actions';
+import { toggleProfile } from 'src/store/profile/slice';
 import { selectVisible } from 'src/store/profile/selectors';
 import style from './Profile.module.css';
 
