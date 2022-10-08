@@ -9,3 +9,23 @@
   font-weight: bold;
 }
 
+.btnSign {
+  border: none;
+  border-radius: 7px;
+  padding: 5px 5px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  width: 95px;
+  margin: 10px 0 0 50px;
+}
+
+.btnSignIn {
+  background-color: darkgreen;
+}
+
+.btnSignOut {
+  background-color: maroon;
+}

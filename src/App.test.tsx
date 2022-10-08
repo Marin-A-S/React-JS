@@ -35,6 +35,17 @@ describe('App', () => {
       </Provider>
     );
 
+    // Ввод логина с паролем
+    const loginIn = screen.getByTestId<HTMLInputElement>('login');
+    await userEvent.type(loginIn, 'GeekBrains');
+
+    const passwordIn = screen.getByTestId<HTMLInputElement>('password');
+    await userEvent.type(passwordIn, 'Student');
+
+    const btnLogin = screen.getByTestId('btn-login');
+    await userEvent.click(btnLogin);
+
+    //
     const input = screen.getByTestId<HTMLInputElement>('input');
     await userEvent.type(input, 'Hello, world!');
 
