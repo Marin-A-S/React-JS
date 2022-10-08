@@ -10,26 +10,28 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { articlesReducer } from './articles/slice';
 import { messagesReducer } from './messages/slice';
 import { profileReducer } from './profile/slice';
 
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['profile'],
+  blacklist: ['articles', 'profile'],
 };
 
 const rootReducer = combineReducers({
   profile: profileReducer,
   messages: messagesReducer,
+  articles: articlesReducer,
 });
 
-const persisredReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export type StoreState = ReturnType<typeof rootReducer>;
 
 export const store = configureStore({
-  reducer: persisredReducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
