@@ -5,12 +5,10 @@ import style from './Theme.module.css';
 export const Theme: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  console.log(theme);
-
   return (
     <div className={style.wrapper}>
-      <p>Theme: {theme === 'light' ? '🌞' : '🌙'}</p>
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <p>theme: {theme === 'light' ? '🌞' : '🌙'}</p>
+      <button onClick={toggleTheme}>toggle theme</button>
     </div>
   );
 };
